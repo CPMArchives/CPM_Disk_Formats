@@ -1,0 +1,11 @@
+id: 134
+name: "Omikron Mapper II (40T, SS, DD, 134K)"
+status: "provisional"
+identification: {"systems":["Omikron Mapper II 40T SS DD 134K"],"notes":"Montezuma Micro external catalogue, original ordinal 64"}
+media: {"cylinders":40,"sides":1}
+recording: {"bytes_per_sector":128,"sectors_per_track":28,"sector_ids":[1,6,11,16,21,26,3,8,13,18,23,28,5,10,15,20,25,2,7,12,17,22,27,4,9,14,19,24],"notes":"Source supplies sector size code 0 and a sector-ID ordering table; the original final option byte is 128. No unverified controller flags inferred."}
+logical_layout: {"tracks":40,"bytes_per_sector":128,"sectors_per_track":28,"notes":"Logical track count inferred from labelled sides/cylinders; the source gives SPT in 128-byte records."}
+filesystem: {"block_size":1024,"directory_entries":64,"dpb":{"spt":28,"bsh":3,"blm":7,"exm":0,"dsm":133,"drm":63,"al0":192,"al1":0,"cks":16,"off":2}}
+system: {"reserved_tracks":2}
+provenance: {"sources":[{"name":"Montezuma Micro DISK.FDF","entry":"MMF064","reference":"External record 64 in BetterCPM preserved catalogue","url":"https://github.com/CPMArchives/BetterCPM/blob/main/third_party/montezuma/DISK.FDF"},{"name":"BetterCPM field interpretation","reference":"metadata/mm-fdf-exclusions.json","url":"https://github.com/CPMArchives/BetterCPM/blob/main/metadata/mm-fdf-exclusions.json"}],"notes":"Source parameters transcribed without correcting discrepancies. Source header: Omikron Mapper II (40T, SS, DD, 134K). Previous BetterCP/M structural analysis reported: declared allocation exceeds available media bytes. This is a potential inconsistency requiring historical verification, not a status imposed by its compiler."}
+notes: "Original source numeric parameters: 28,3,7,0,133,63,192,0,16,2,28,0,40,128. This record describes historical source evidence; physical equivalence to another format is unverified."
