@@ -7,4 +7,4 @@ recording: {"encoding":"MFM","data_rate":"HD","bytes_per_sector":512,"sectors_pe
 logical_layout: {"tracks":160,"track_order":"out_and_back","skew":{"value":1,"type":"cpmtools"}}
 filesystem: {"os":"3","block_size":4096,"directory_entries":256,"dpb":{"off":2}}
 system: {"reserved_tracks":2}
-provenance: {"sources":[{"name":"cpmtools diskdefs","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"cpm86-144feat","libdsk_format":"ibm1440"},{"name":"LibDsk built-in geometry table","version":"1.5.12","entry":"ibm1440","url":"https://github.com/lipro-cpm4l/libdsk/blob/cpm4l/libdsk-1.5.12/lib/dsksgeom.c"}],"notes":"Geometry transcribed from LibDsk 1.5.12 source; verify against 1.5.22 before accepting. Filesystem parameters from cpmtools."}
+provenance: {"sources":[{"name":"cpmtools diskdefs","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"cpm86-144feat","libdsk_format":"ibm1440"},{"name":"LibDsk built-in geometry table","version":"1.5.22","entry":"ibm1440","reference":"libdsk-1.5.22.tar.gz:lib/dsksgeom.c"}],"notes":"Geometry transcribed from LibDsk 1.5.22 source; verified against uploaded 1.5.22 archive. Filesystem parameters from cpmtools."}
