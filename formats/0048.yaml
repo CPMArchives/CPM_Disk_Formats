@@ -1,8 +1,7 @@
 id: 48
 name: "bw14"
 status: "provisional"
-recording: {"bytes_per_sector":256,"sectors_per_track":18}
-logical_layout: {"tracks":80,"skew":{"value":1,"type":"cpmtools"}}
+logical_layout: {"tracks":80,"skew":{"value":1,"type":"cpmtools"},"bytes_per_sector":256,"sectors_per_track":18}
 filesystem: {"block_size":2048,"directory_entries":64,"os":"2.2"}
 system: {"reserved_tracks":2}
 provenance: {"sources":[{"name":"cpmtools diskdefs","version":"2.21","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"bw14","reference":"sources/cpmtools-diskdefs-e534e20.txt"}],"notes":""}
