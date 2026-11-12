@@ -5,11 +5,9 @@ status: provisional
 media:
   cylinders: 77
 
-recording:
+logical_layout:
   bytes_per_sector: 128
   sectors_per_track: 26
-
-logical_layout:
   tracks: 77
   skew:
     value: 6
