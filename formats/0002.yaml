@@ -1,0 +1,10 @@
+# Pilot source-derived record; JSON representation is valid YAML 1.2
+id: 2
+name: "Amstrad PCW 180K"
+status: "provisional"
+media: {"cylinders":40,"sides":1}
+recording: {"encoding":"MFM","data_rate":"SD","bytes_per_sector":512,"sectors_per_track":9,"sector_id_base":1,"read_write_gap":42,"format_gap":82}
+logical_layout: {"tracks":40,"track_order":"alternate_sides","skew":{"value":1,"type":"cpmtools"}}
+filesystem: {"os":"3","block_size":1024,"directory_entries":64,"dpb":{"off":1}}
+system: {"reserved_tracks":1}
+provenance: {"sources":[{"name":"cpmtools diskdefs","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"pcw","libdsk_format":"pcw180"},{"name":"LibDsk built-in geometry table","version":"1.5.12","entry":"pcw180","url":"https://github.com/lipro-cpm4l/libdsk/blob/cpm4l/libdsk-1.5.12/lib/dsksgeom.c"}],"notes":"Geometry transcribed from LibDsk 1.5.12 source; verify against 1.5.22 before accepting. Filesystem parameters from cpmtools."}
