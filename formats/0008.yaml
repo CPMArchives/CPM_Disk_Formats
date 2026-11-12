@@ -1,0 +1,8 @@
+id: 8
+name: "cf2dd"
+status: "provisional"
+recording: {"bytes_per_sector":512,"sectors_per_track":9}
+logical_layout: {"tracks":160,"skew":{"value":1,"type":"cpmtools"}}
+filesystem: {"block_size":2048,"directory_entries":256,"os":"3"}
+system: {"reserved_tracks":1}
+provenance: {"sources":[{"name":"cpmtools diskdefs","version":"2.21","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"cf2dd","reference":"sources/cpmtools-diskdefs-e534e20.txt","libdsk_format":"pcw720"}],"notes":"Imported from source without assuming physical geometry. "}
