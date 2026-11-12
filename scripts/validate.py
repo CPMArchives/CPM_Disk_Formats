@@ -4,6 +4,7 @@
 Requires: pip install pyyaml jsonschema
 """
 import json
+import re
 from pathlib import Path
 import sys
 import yaml
@@ -19,7 +20,19 @@ for path in sorted((ROOT / "formats").glob("*.yaml")):
     try:
         # Reject duplicate YAML keys rather than silently overwriting them.
         class UniqueLoader(yaml.SafeLoader):
-            pass
+            # Do not mutate the shared PyYAML SafeLoader resolvers.
+            yaml_implicit_resolvers = {
+                char: [entry for entry in entries
+                       if entry[0] != "tag:yaml.org,2002:bool"]
+                for char, entries in yaml.SafeLoader.yaml_implicit_resolvers.items()
+            }
+
+        # YAML 1.2 Core schema: only true/false resolve as booleans.
+        UniqueLoader.add_implicit_resolver(
+            "tag:yaml.org,2002:bool",
+            re.compile(r"^(?:true|True|TRUE|false|False|FALSE)$"),
+            list("tTfF"),
+        )
         def unique_map(loader, node):
             result = {}
             for key_node, value_node in node.value:
