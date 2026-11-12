@@ -1,0 +1,39 @@
+id: 1
+name: IBM 3740
+status: provisional
+
+media:
+  cylinders: 77
+
+recording:
+  bytes_per_sector: 128
+  sectors_per_track: 26
+
+logical_layout:
+  tracks: 77
+  skew:
+    value: 6
+    type: cpmtools
+
+filesystem:
+  os: "2.2"
+  block_size: 1024
+  directory_entries: 64
+  dpb:
+    off: 2
+
+system:
+  reserved_tracks: 2
+
+provenance:
+  sources:
+    - name: cpmtools diskdefs
+      version: "2.21"
+      revision: e534e20c15973a9559e981efb498a102020e5db7
+      entry: ibm-3740
+      url: https://github.com/lipro-cpm4l/cpmtools/blob/cpm4l/cpmtools-2.21/diskdefs
+  notes: >
+    Transcribed from the cpmtools definition. The source uses
+    tracks=77, seclen=128, sectrk=26, blocksize=1024,
+    maxdir=64, skew=6, boottrk=2, and os=2.2.
+    Physical encoding, sidedness, and interleave are not inferred.
