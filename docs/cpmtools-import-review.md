@@ -35,3 +35,7 @@ Keep PR #5 in draft pending the logical-versus-physical sector field correction 
 ## Resolution of logical-sector mapping
 
 Schema v0.1 now permits `logical_layout.bytes_per_sector` and `logical_layout.sectors_per_track`. All 131 imported/pilot records now include these source-derived logical values. The 127 new imports and the two pilot records without independent physical evidence omit `recording` geometry. PCW 180K and CP/M-86 144FEAT retain separately verified LibDsk physical geometry. This resolves the logical/physical field conflation; remaining source-exception interpretation is tracked above.
+
+## Follow-up: explicit skew tables
+
+The seven source-defined `skewtab` sequences are now stored as `logical_layout.sector_translation_table` without renumbering. Their original text remains in provenance notes for traceability. The `logicalextents`, `offset`, `datarate`, `fm`, `sides`, and malformed `trsi` cases are deliberately unchanged pending semantic review.
