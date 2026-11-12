@@ -1,8 +1,7 @@
 id: 46
 name: "z80pack-hdb"
 status: "provisional"
-recording: {"bytes_per_sector":128,"sectors_per_track":16384}
-logical_layout: {"tracks":256,"skew":{"value":0,"type":"cpmtools"}}
+logical_layout: {"tracks":256,"skew":{"value":0,"type":"cpmtools"},"bytes_per_sector":128,"sectors_per_track":16384}
 filesystem: {"block_size":16384,"directory_entries":8192,"os":"2.2"}
 system: {"reserved_tracks":0}
 provenance: {"sources":[{"name":"cpmtools diskdefs","version":"2.21","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"z80pack-hdb","reference":"sources/cpmtools-diskdefs-e534e20.txt"}],"notes":""}
