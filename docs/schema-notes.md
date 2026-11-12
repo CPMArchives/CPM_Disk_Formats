@@ -17,3 +17,7 @@ This is a pilot schema, not yet fully validated against representative source re
 ## Logical sectors versus physical recording
 
 `logical_layout.bytes_per_sector` and `logical_layout.sectors_per_track` describe the sector geometry used by a filesystem/image-access definition (including cpmtools `seclen` and `sectrk`). They do **not** establish physical on-disk sector geometry. `recording.bytes_per_sector` and `recording.sectors_per_track` are reserved for independently supported physical recording parameters. Both sets may coexist when independently verified. The source `skew` remains marked `type: cpmtools`.
+
+## Explicit sector translation tables
+
+`logical_layout.sector_translation_table` retains the cpmtools `skewtab` sequence exactly as supplied, including zero-based values. It represents logical sector translation in the source definition, not physical interleave. Do not renumber or normalize the sequence without separately documenting the translation convention.
