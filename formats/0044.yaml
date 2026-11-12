@@ -1,8 +1,7 @@
 id: 44
 name: "icl-comet-525ss"
 status: "provisional"
-recording: {"bytes_per_sector":512,"sectors_per_track":10}
-logical_layout: {"tracks":40}
+logical_layout: {"tracks":40,"bytes_per_sector":512,"sectors_per_track":10}
 filesystem: {"block_size":1024,"directory_entries":64,"os":"2.2"}
 system: {"reserved_tracks":2}
 provenance: {"sources":[{"name":"cpmtools diskdefs","version":"2.21","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"icl-comet-525ss","reference":"sources/cpmtools-diskdefs-e534e20.txt"}],"notes":"Other source directives: skewtab 0,3,6,9,2,5,8,1,4,7"}
