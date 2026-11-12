@@ -1,0 +1,9 @@
+# Pilot source-derived record; JSON representation is valid YAML 1.2
+id: 4
+name: "CP/M-86 720K"
+status: "provisional"
+recording: {"bytes_per_sector":512,"sectors_per_track":9}
+logical_layout: {"tracks":160,"skew":{"value":1,"type":"cpmtools"}}
+filesystem: {"os":"3","block_size":2048,"directory_entries":256,"dpb":{"off":2}}
+system: {"reserved_tracks":2}
+provenance: {"sources":[{"name":"cpmtools diskdefs","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"cpm86-720"}],"notes":"No explicit LibDsk geometry reference. Physical cylinder/head geometry, encoding and traversal remain unknown."}
