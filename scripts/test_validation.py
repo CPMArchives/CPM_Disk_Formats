@@ -28,6 +28,8 @@ def check(files, expect_success):
 
 base = 'id: 1\nname: Test\nstatus: provisional\n'
 check({"0001.yaml": base}, True)
+check({"0001.yaml": base + "filesystem:\n  dpb:\n    off: 2\n"}, True)  # YAML 1.2 'off' is a string key
+check({"0001.yaml": base + "filesystem:\n  dpb:\n    off: 2\n    true: 3\n"}, False)  # invalid DPB key
 check({"0001.yaml": base + "id: 2\n"}, False)  # duplicate YAML key
 check({"0002.yaml": base}, False)                 # filename mismatch
 check({"0001.yaml": base + "related_formats:\n  - id: 2\n    relationship: variant\n"}, False)
