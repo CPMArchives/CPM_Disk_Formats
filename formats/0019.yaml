@@ -1,0 +1,7 @@
+id: 19
+name: "electroglas"
+status: "provisional"
+logical_layout: {"tracks":80,"skew":{"value":0,"type":"cpmtools"},"bytes_per_sector":512,"sectors_per_track":10}
+filesystem: {"block_size":2048,"directory_entries":256,"os":"3"}
+system: {"reserved_tracks":1}
+provenance: {"sources":[{"name":"cpmtools diskdefs","version":"2.21","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"electroglas","reference":"sources/cpmtools-diskdefs-e534e20.txt"}],"notes":"Imported from source without assuming physical geometry. "}

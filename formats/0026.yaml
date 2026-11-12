@@ -1,0 +1,7 @@
+id: 26
+name: "attwp"
+status: "provisional"
+logical_layout: {"tracks":80,"bytes_per_sector":256,"sectors_per_track":32}
+filesystem: {"block_size":2048,"directory_entries":128,"os":"2.2"}
+system: {"reserved_tracks":1}
+provenance: {"sources":[{"name":"cpmtools diskdefs","version":"2.21","revision":"e534e20c15973a9559e981efb498a102020e5db7","entry":"attwp","reference":"sources/cpmtools-diskdefs-e534e20.txt"}],"notes":"Other source directives: logicalextents 1; skewtab 0,2,4,6,8,10,12,14,1,3,5,7,9,11,13,15,16,18,20,22,24,26,28,30,17,19,21,23,25,27,29,31"}

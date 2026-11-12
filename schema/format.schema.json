@@ -302,6 +302,12 @@
         },
         "notes": {
           "type": "string"
+        },
+        "bytes_per_sector": {
+          "$ref": "#/$defs/positive"
+        },
+        "sectors_per_track": {
+          "$ref": "#/$defs/positive"
         }
       },
       "additionalProperties": false
