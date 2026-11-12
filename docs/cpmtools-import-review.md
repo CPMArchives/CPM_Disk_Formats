@@ -31,3 +31,7 @@ Likewise, `skew` and `skewtab` must remain identified as cpmtools logical mappin
 ## Recommendation
 
 Keep PR #5 in draft pending the logical-versus-physical sector field correction and a source-mapping audit. Do not merge merely because JSON Schema validation is green.
+
+## Resolution of logical-sector mapping
+
+Schema v0.1 now permits `logical_layout.bytes_per_sector` and `logical_layout.sectors_per_track`. All 131 imported/pilot records now include these source-derived logical values. The 127 new imports and the two pilot records without independent physical evidence omit `recording` geometry. PCW 180K and CP/M-86 144FEAT retain separately verified LibDsk physical geometry. This resolves the logical/physical field conflation; remaining source-exception interpretation is tracked above.
