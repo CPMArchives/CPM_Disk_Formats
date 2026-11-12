@@ -1,0 +1,468 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CPMArchives/CPM_Disk_Formats/blob/main/schema/format.schema.json",
+  "title": "CP/M disk format record v0.1",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "status"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "positive": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "nonnegative": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "entry": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "libdsk_format": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "relationship"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/positive"
+        },
+        "relationship": {
+          "enum": [
+            "variant",
+            "possible_variant",
+            "equivalent",
+            "derived_from",
+            "derived_into",
+            "conflicts_with"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "trackOverride": {
+      "type": "object",
+      "required": [
+        "cylinders",
+        "heads"
+      ],
+      "properties": {
+        "cylinders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonnegative"
+          },
+          "minItems": 1
+        },
+        "heads": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonnegative"
+          },
+          "minItems": 1
+        },
+        "encoding": {
+          "type": "string"
+        },
+        "sectors_per_track": {
+          "$ref": "#/$defs/positive"
+        },
+        "bytes_per_sector": {
+          "$ref": "#/$defs/positive"
+        },
+        "sector_id_base": {
+          "$ref": "#/$defs/nonnegative"
+        },
+        "sector_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonnegative"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/positive"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "active",
+        "provisional",
+        "retired"
+      ]
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "identification": {
+      "type": "object",
+      "properties": {
+        "manufacturer": {
+          "type": "string"
+        },
+        "systems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "introduced": {
+          "type": "string"
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "diameter_inches": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "sides": {
+          "$ref": "#/$defs/positive"
+        },
+        "cylinders": {
+          "$ref": "#/$defs/positive"
+        },
+        "rpm": {
+          "$ref": "#/$defs/positive"
+        },
+        "density": {
+          "type": "string"
+        },
+        "sectoring": {
+          "enum": [
+            "hard",
+            "soft"
+          ]
+        },
+        "hard_sector_holes": {
+          "$ref": "#/$defs/positive"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "recording": {
+      "type": "object",
+      "properties": {
+        "encoding": {
+          "type": "string"
+        },
+        "data_rate": {
+          "type": "string"
+        },
+        "sectors_per_track": {
+          "$ref": "#/$defs/positive"
+        },
+        "bytes_per_sector": {
+          "$ref": "#/$defs/positive"
+        },
+        "sector_id_base": {
+          "$ref": "#/$defs/nonnegative"
+        },
+        "sector_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nonnegative"
+          }
+        },
+        "interleave": {
+          "type": "object",
+          "properties": {
+            "factor": {
+              "$ref": "#/$defs/positive"
+            },
+            "order": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nonnegative"
+              }
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "read_write_gap": {
+          "$ref": "#/$defs/nonnegative"
+        },
+        "format_gap": {
+          "$ref": "#/$defs/nonnegative"
+        },
+        "track_overrides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trackOverride"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "logical_layout": {
+      "type": "object",
+      "properties": {
+        "tracks": {
+          "$ref": "#/$defs/positive"
+        },
+        "track_order": {
+          "type": "string"
+        },
+        "skew": {
+          "type": "object",
+          "required": [
+            "value",
+            "type"
+          ],
+          "properties": {
+            "value": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "type": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "filesystem": {
+      "type": "object",
+      "properties": {
+        "os": {
+          "type": "string"
+        },
+        "block_size": {
+          "$ref": "#/$defs/positive"
+        },
+        "directory_entries": {
+          "$ref": "#/$defs/positive"
+        },
+        "dpb": {
+          "type": "object",
+          "properties": {
+            "spt": {
+              "$ref": "#/$defs/positive"
+            },
+            "bsh": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "blm": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "exm": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "dsm": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "drm": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "al0": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "al1": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "cks": {
+              "$ref": "#/$defs/nonnegative"
+            },
+            "off": {
+              "$ref": "#/$defs/nonnegative"
+            }
+          },
+          "additionalProperties": false
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "system": {
+      "type": "object",
+      "properties": {
+        "bootable": {
+          "type": "boolean"
+        },
+        "reserved_tracks": {
+          "$ref": "#/$defs/nonnegative"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "compatibility": {
+      "type": "object",
+      "properties": {
+        "systems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "drives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "controllers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "related_formats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "retirement": {
+      "type": "object",
+      "required": [
+        "reason"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "successor_id": {
+          "$ref": "#/$defs/positive"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "retired"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "retirement"
+        ]
+      }
+    }
+  ]
+}
