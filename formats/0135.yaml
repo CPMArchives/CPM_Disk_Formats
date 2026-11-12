@@ -1,0 +1,11 @@
+id: 135
+name: "Pied Piper Executive (80T, DS, DD, 784K)"
+status: "provisional"
+identification: {"systems":["Pied Piper Executive 80T DS DD 784K"],"notes":"Montezuma Micro external catalogue, original ordinal 71"}
+media: {"cylinders":80,"sides":2}
+recording: {"bytes_per_sector":512,"sectors_per_track":10,"sector_ids":[1,3,5,7,9,2,4,6,8,10],"notes":"Source supplies sector size code 2 and a sector-ID ordering table; the original final option byte is 192. No unverified controller flags inferred."}
+logical_layout: {"tracks":160,"bytes_per_sector":512,"sectors_per_track":10,"notes":"Logical track count inferred from labelled sides/cylinders; the source gives SPT in 128-byte records."}
+filesystem: {"block_size":2048,"directory_entries":256,"dpb":{"spt":40,"bsh":4,"blm":15,"exm":0,"dsm":191,"drm":255,"al0":224,"al1":0,"cks":32,"off":3}}
+system: {"reserved_tracks":3}
+provenance: {"sources":[{"name":"Montezuma Micro DISK.FDF","entry":"MMF071","reference":"External record 71 in BetterCPM preserved catalogue","url":"https://github.com/CPMArchives/BetterCPM/blob/main/third_party/montezuma/DISK.FDF"},{"name":"BetterCPM field interpretation","reference":"metadata/mm-fdf-exclusions.json","url":"https://github.com/CPMArchives/BetterCPM/blob/main/metadata/mm-fdf-exclusions.json"}],"notes":"Source parameters transcribed without correcting discrepancies. Source header: Pied Piper Executive (80T, DS, DD, 784K). Previous BetterCP/M structural analysis reported: directory bitmap does not reserve its full directory. This is a potential inconsistency requiring historical verification, not a status imposed by its compiler."}
+notes: "Original source numeric parameters: 40,4,15,0,191,255,224,0,32,3,10,2,80,192. This record describes historical source evidence; physical equivalence to another format is unverified."
