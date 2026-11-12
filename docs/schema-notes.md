@@ -13,3 +13,7 @@ Relations must be recorded in both files. `derived_from` reciprocates with `deri
 `recording.track_overrides` supports exceptions. Additional per-sector attributes should be introduced only when real source examples require them.
 
 This is a pilot schema, not yet fully validated against representative source records.
+
+## Logical sectors versus physical recording
+
+`logical_layout.bytes_per_sector` and `logical_layout.sectors_per_track` describe the sector geometry used by a filesystem/image-access definition (including cpmtools `seclen` and `sectrk`). They do **not** establish physical on-disk sector geometry. `recording.bytes_per_sector` and `recording.sectors_per_track` are reserved for independently supported physical recording parameters. Both sets may coexist when independently verified. The source `skew` remains marked `type: cpmtools`.
