@@ -1,0 +1,11 @@
+id: 132
+name: "Acorn (80T, SS, SD, 392K)"
+status: "provisional"
+identification: {"systems":["Acorn 80T SS SD 392K"],"notes":"Montezuma Micro external catalogue, original ordinal 3"}
+media: {"cylinders":80,"sides":1}
+recording: {"bytes_per_sector":256,"sectors_per_track":10,"sector_ids":[0,1,4,5,8,9,2,3,6,7],"notes":"Source supplies sector size code 1 and a sector-ID ordering table; the original final option byte is 0. No unverified controller flags inferred."}
+logical_layout: {"tracks":80,"bytes_per_sector":256,"sectors_per_track":10,"notes":"Logical track count inferred from labelled sides/cylinders; the source gives SPT in 128-byte records."}
+filesystem: {"block_size":2048,"directory_entries":128,"dpb":{"spt":20,"bsh":4,"blm":15,"exm":1,"dsm":195,"drm":127,"al0":192,"al1":0,"cks":32,"off":3}}
+system: {"reserved_tracks":3}
+provenance: {"sources":[{"name":"Montezuma Micro DISK.FDF","entry":"MMF003","reference":"External record 3 in BetterCPM preserved catalogue","url":"https://github.com/CPMArchives/BetterCPM/blob/main/third_party/montezuma/DISK.FDF"},{"name":"BetterCPM field interpretation","reference":"metadata/mm-fdf-exclusions.json","url":"https://github.com/CPMArchives/BetterCPM/blob/main/metadata/mm-fdf-exclusions.json"}],"notes":"Source parameters transcribed without correcting discrepancies. Source header: Acorn (80T, SS, SD, 392K). Previous BetterCP/M structural analysis reported: declared allocation exceeds available media bytes. This is a potential inconsistency requiring historical verification, not a status imposed by its compiler."}
+notes: "Original source numeric parameters: 20,4,15,1,195,127,192,0,32,3,10,1,80,0. This record describes historical source evidence; physical equivalence to another format is unverified."

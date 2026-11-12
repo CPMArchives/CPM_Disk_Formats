@@ -1,0 +1,11 @@
+id: 136
+name: "Zenith H89 (40T, SS, SD, 94K)"
+status: "provisional"
+identification: {"systems":["Zenith H89 40T SS SD 94K"],"notes":"Montezuma Micro external catalogue, original ordinal 87"}
+media: {"cylinders":40,"sides":1}
+recording: {"bytes_per_sector":256,"sectors_per_track":10,"sector_ids":[1,2,3,4,5,6,7,8,9,10],"notes":"Source supplies sector size code 1 and a sector-ID ordering table; the original final option byte is 0. No unverified controller flags inferred."}
+logical_layout: {"tracks":40,"bytes_per_sector":256,"sectors_per_track":10,"notes":"Logical track count inferred from labelled sides/cylinders; the source gives SPT in 128-byte records."}
+filesystem: {"block_size":1024,"directory_entries":64,"dpb":{"spt":20,"bsh":3,"blm":7,"exm":0,"dsm":93,"drm":63,"al0":192,"al1":0,"cks":16,"off":3}}
+system: {"reserved_tracks":3}
+provenance: {"sources":[{"name":"Montezuma Micro DISK.FDF","entry":"MMF087","reference":"External record 87 in BetterCPM preserved catalogue","url":"https://github.com/CPMArchives/BetterCPM/blob/main/third_party/montezuma/DISK.FDF"},{"name":"BetterCPM field interpretation","reference":"metadata/mm-fdf-exclusions.json","url":"https://github.com/CPMArchives/BetterCPM/blob/main/metadata/mm-fdf-exclusions.json"}],"notes":"Source parameters transcribed without correcting discrepancies. Source header: Zenith H89 (40T, SS, SD, 94K). Previous BetterCP/M structural analysis reported: declared allocation exceeds available media bytes. This is a potential inconsistency requiring historical verification, not a status imposed by its compiler."}
+notes: "Original source numeric parameters: 20,3,7,0,93,63,192,0,16,3,10,1,40,0. This record describes historical source evidence; physical equivalence to another format is unverified."
