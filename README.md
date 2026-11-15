@@ -24,3 +24,7 @@ Schema v0.1 pilot on development branch; not yet a complete or historically veri
 Initial sources: cpmtools `diskdefs` and LibDsk 1.5.22 built-in geometry table. Source definitions are evidence, not necessarily complete historical specifications.
 
 See `docs/schema-notes.md` and `sources/README.md`.
+
+## Historical validation
+
+Format records may optionally include an evidence-based `validation` section, independent of their lifecycle `status`. See [validation protocol](docs/validation.md). No existing record is automatically marked validated by this schema change.
