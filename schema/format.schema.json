@@ -308,6 +308,14 @@
         },
         "sectors_per_track": {
           "$ref": "#/$defs/positive"
+        },
+        "sector_translation_table": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/nonnegative"
+          },
+          "description": "Explicit source-defined logical sector translation (cpmtools skewtab); values retain source numbering."
         }
       },
       "additionalProperties": false
