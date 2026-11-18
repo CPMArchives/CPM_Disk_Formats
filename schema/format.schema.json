@@ -126,6 +126,56 @@
         }
       },
       "additionalProperties": false
+    },
+    "validationEvidence": {
+      "type": "object",
+      "required": [
+        "kind",
+        "reference",
+        "result"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "historical_image",
+            "documentation",
+            "filesystem_test",
+            "geometry_inspection",
+            "hardware_test",
+            "other"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable link, image identifier, or report path; not necessarily a downloadable URL."
+        },
+        "result": {
+          "enum": [
+            "pass",
+            "fail",
+            "inconclusive",
+            "informational"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        },
+        "tool_version": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "properties": {
@@ -458,6 +508,42 @@
     },
     "notes": {
       "type": "string"
+    },
+    "validation": {
+      "type": "object",
+      "description": "Evidence-based historical validation, independent of catalogue record lifecycle status.",
+      "required": [
+        "validation_status"
+      ],
+      "properties": {
+        "validation_status": {
+          "enum": [
+            "unvalidated",
+            "partially_validated",
+            "validated",
+            "failed",
+            "blocked"
+          ]
+        },
+        "validation_remaining": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "validation_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/validationEvidence"
+          }
+        },
+        "validation_notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     }
   },
   "allOf": [
